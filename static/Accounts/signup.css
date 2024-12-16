@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items from the top */
+    padding-top: 100px; /* Add space from the top to move away from the navbar */
+}
+
+/* Navbar styles */
+.navsection {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.348);
+    opacity: 0;
+    transform: translateY(-100px); /* Hidden above the screen initially */
+    animation: dropDown 1.5s ease-in-out forwards;
+}
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* Start from off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+
+.navitems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 15px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.navlinks a:hover {
+    color: #7448de;
+    text-decoration: underline;
+}
+
+.homelink {
+    color: #7448de !important;
+    font-weight: 600 !important;
+}
+
+/* Signup container styles */
+.signup-container {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 450px; /* Increase width of the signup box */
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100px); /* Hidden above the screen initially */
+    animation: dropUp 1.2s ease-in-out forwards;
+}
+@keyframes dropUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start from off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Logo inside signup form */
+.signup-container img {
+    width: 200px; /* Adjust the logo size */
+    margin-bottom: 20px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: black; /* Use EduLink brand color */
+    font-size: 35px; /* Increase font size for "Sign Up" */
+    transition: all 0.5s ease-in-out;
+}
+
+.signup-container h2:hover {
+    color:#7448de; /* Use EduLink brand color */
+    text-decoration: underline;
+}
+
+.signup-container input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7448de; /* Updated button color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-container button:hover {
+    background-color: #623baf; /* Slightly darker hover color */
+}
+
+.signup-container .login-link {
+    color: #7448de; /* Updated link color */
+    text-decoration: none;
+}
+
+.signup-container .login-link:hover {
+    text-decoration: underline;
+}
+
+.signup-container p {
+    margin-top: 20px;
+    font-size: 16px;
+}

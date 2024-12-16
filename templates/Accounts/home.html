@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'Accounts/home.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'Accounts/images/EduLink-Fevicon.png' %}"
+      sizes="96x96"
+      type="image/png"
+    />
+    <style>
+      .bgimg {
+        background-image: url(" {% static 'Accounts/images/bgimg-home1.jpeg' %} ");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+      }
+
+      .contact-section {
+        width: 100%;
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3rem 1rem;
+      }
+
+      .contact-intro > * + * {
+        margin-top: 1rem;
+      }
+
+      .contact-title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+      }
+
+      .contact-description {
+        color: rgb(107 114 128);
+      }
+
+      .form-group-container {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-label {
+        margin-bottom: 0.5rem;
+      }
+
+      .form-input,
+      .form-textarea {
+        padding: 0.5rem;
+        border: 1px solid #e5e7eb;
+        display: flex;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .form-input::placeholder,
+      .form-textarea:focus-visible {
+        color: #6b7280;
+      }
+
+      .form-input:focus-visible,
+      .form-textarea:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+      }
+
+      .form-textarea {
+        min-height: 120px;
+      }
+
+      .form-submit {
+        width: 100%;
+        margin-top: 1.2rem;
+        background-color: #3124ca;
+        color: #fff;
+        padding: 13px 5px;
+        border-radius: 0.375rem;
+      }
+    </style>
+
+    <title>EduLink</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navsection">
+        <nav class="navbar">
+          <ul class="navitems">
+            <div class="logo">
+              <a href="#" class="homelink"
+                ><img
+                  src="{% static 'Accounts/images/BlueBlackLogoRMBACKGROUND.png' %}"
+                  alt="EduLink-Logo"
+              /></a>
+            </div>
+
+            <div class="navlinks">
+              <li>
+                <div class="rightlinks">
+                  <a href="#" class="homelink">Home</a>
+                  <a href="#aboutus">About Us</a>
+                  <a href="#faq">Contact Us</a>
+                  <a href="{% url 'signup' %}" class="signuplink">Sign-Up</a>
+                  <a href="{% url 'login' %}" class="loginlink">Login</a>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="section1">
+        <div class="bgimg">
+          <div class="overlay">
+            <div class="content">
+              <div class="heading">
+                <h1
+                  class="open-sans-regular"
+                  style="
+                    font-family: 'Nunito', sans-serif;
+                    font-optical-sizing: auto;
+                    font-weight: 600;
+                    font-style: normal;
+                  "
+                >
+                  Welcome to
+                  <span class="sitename" id="nameofsite">EduLink</span>
+                </h1>
+              </div>
+              <div
+                class="tagline"
+                style="
+                  font-family: 'Nunito', sans-serif;
+                  font-optical-sizing: auto;
+                  font-weight: 500;
+                  font-style: normal;
+                "
+              >
+                <p>
+                  Connecting Students, Teachers and Parents for a Better Future
+                </p>
+              </div>
+              <div class="para">
+                <p>
+                  "EduLink is your gateway to interactive online learning,
+                  connecting students and instructors through a user-friendly
+                  platform. We offer accessible courses, quizzes, and progress
+                  tracking to help you achieve your goals."
+                </p>
+              </div>
+              <div class="buttons">
+                <input
+                  type="button"
+                  class="RMbutton"
+                  value="Read More"
+                  onclick="location.href='#aboutus';"
+                />
+                <input
+                  type="button"
+                  class="JNbutton"
+                  value="Join Now"
+                  onclick="location.href='{% url 'login' %}';"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardsection" id="aboutus">
+        <div class="paralines">
+          <h1>Key Features of EduLink</h1>
+        </div>
+        <div class="allcards">
+          <div class="card">
+            <img
+              src="{% static 'Accounts/images/file-blank-regular-96.png' %}"
+              alt="file"
+            />
+            <h2>Seamless Assignment Sharing</h2>
+            <p>
+              Instructors and students can easily upload, share, and submit
+              assignments and attachments for a smoother learning process.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              src="{% static 'Accounts/images/check-square-regular-96.png' %}"
+              alt="file"
+            />
+            <h2>Test Your Knowledge</h2>
+            <p>
+              Engage in interactive quizzes and assignments designed to enhance
+              learning and track your progress.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              src="{% static 'Accounts/images/message-rounded-dots-regular-96.png' %}"
+              alt="file"
+            />
+            <h2>Collaborate with Peers</h2>
+            <p>
+              Participate in course discussions and interact with fellow
+              students and instructors in dedicated forums.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              src="{% static 'Accounts/images/bar-chart-square-regular-96.png' %}"
+              alt="file"
+            />
+            <h2>Track Your Progress</h2>
+            <p>
+              Monitor your learning journey with real-time tracking of course
+              completion, grades, and personalized feedback.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aboutus">
+        <div class="aboutussection">
+          <div class="aboutusimg">
+            <img
+              src="{% static 'Accounts/images/chatgptimg.webp' %}"
+              alt="aboutus image"
+            />
+          </div>
+          <div class="aboutusinfo">
+            <div class="aboutusheading">
+              <h2>About Us</h2>
+              <h1
+                class="title"
+                style="
+                  font-family: 'Nunito', sans-serif;
+                  font-optical-sizing: auto;
+                  font-weight: 800;
+                  font-style: normal;
+                "
+              >
+                Welcome to EduLink
+              </h1>
+            </div>
+            <div class="aboutuspara">
+              <div class="firstpara">
+                <p>
+                  At EduLink, we are committed to providing flexible,
+                  accessible, and engaging learning experiences tailored to meet
+                  your educational goals. Join us in shaping the future of
+                  learning with our comprehensive and interactive courses.
+                </p>
+              </div>
+
+              <div class="secondpara">
+                <p>
+                  EduLink is your trusted partner in education, offering a wide
+                  variety of courses led by experienced instructors. We strive
+                  to empower learners across the globe, creating a collaborative
+                  platform where knowledge has no boundaries.
+                </p>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Expert Instructors</li>
+                  <li>Interactive Quizzes & Assignments</li>
+                  <li>Diverse Course Offerings</li>
+                  <li>Discussion Forums for Collaboration</li>
+                  <li>Real-Time Progress Tracking</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="features" class="features-section">
+        <h2 class="section-title">Discover Our Platform's Key Features</h2>
+
+        <div class="feature">
+          <img
+            src="{% static 'Accounts/images/network-chart-solid-108.png' %}"
+            alt="Role-Based Access"
+            class="feature-image"
+          />
+          <div class="feature-text">
+            <h3>Role-Based Access</h3>
+            <p>
+              Our platform offers role-based access, allowing institutions,
+              coordinators, teachers, and students to have tailored experiences
+              and functionalities, streamlining management and learning tasks.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'Accounts/images/bar-chart-alt-2-solid-108.png' %}"
+            alt="Leaderboards"
+            class="feature-image"
+          />
+          <div class="feature-text">
+            <h3>Leaderboards & Challenges</h3>
+            <p>
+              Engage students with weekly challenges, competitions, and
+              leaderboards. Encourage healthy competition and showcase top
+              performers while fostering collaboration.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'Accounts/images/hot-solid-108.png' %}"
+            alt="Streaks"
+            class="feature-image"
+          />
+          <div class="feature-text">
+            <h3>Streaks & Stability Score</h3>
+            <p>
+              Students can maintain daily streaks and stability scores, creating
+              an environment that encourages consistent learning, making
+              progress measurable and motivating.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'Accounts/images/dashboard-solid-108.png' %}"
+            alt="Project Showcase"
+            class="feature-image"
+          />
+          <div class="feature-text">
+            <h3>Student Project Showcase</h3>
+            <p>
+              Allow students to showcase their projects, gather feedback, and
+              collaborate with peers and faculty, building a portfolio that
+              stands out.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'Accounts/images/bot-regular-108.png' %}"
+            alt="Chatbot Assistance"
+            class="feature-image"
+          />
+          <div class="feature-text">
+            <h3>Chatbot Assistance</h3>
+            <p>
+              Our chatbot is available to provide instant assistance, answer
+              questions, and guide students and faculty through the platform
+              with ease.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="containerrr">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq">
+            <div class="faq-item">
+              <details>
+                <summary class="faq-question">What is EduLink?</summary>
+                <div class="faq-answer">
+                  <p>
+                    EduLink is an online learning management platform where
+                    students can enroll in courses, access materials,
+                    participate in quizzes, and collaborate in discussion
+                    forums. Instructors can manage courses, assignments, and
+                    track student progress.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <div class="faq-item">
+              <details>
+                <summary class="faq-question">
+                  How do I enroll in a course?
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    Simply sign up for an account, browse through the course
+                    catalog, and click "Enroll Now" on your desired course.
+                    You’ll gain instant access to all course materials and
+                    resources.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <div class="faq-item">
+              <details>
+                <summary class="faq-question">
+                  Can I access EduLink on my mobile device?
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    Yes! EduLink is fully responsive and can be accessed on both
+                    desktop and mobile devices. This allows you to learn
+                    anytime, anywhere.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <div class="faq-item">
+              <details>
+                <summary class="faq-question">
+                  What if I need help with a course?
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    You can ask questions in the discussion forums or reach out
+                    directly to your instructor through the platform’s messaging
+                    feature. Additionally, our chatbot is always available to
+                    assist you with general questions.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <div class="faq-item">
+              <details>
+                <summary class="faq-question">
+                  How do I contact support?
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    For any technical issues or questions, you can reach our
+                    support team by clicking on the "Contact Us" link in the
+                    footer or by sending an email to support@edulink.com.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="contact-intro">
+          <h2 class="contact-title">Get in Touch</h2>
+          <p class="contact-description">
+            Fill out the form below and we'll get back to you as soon as
+            possible.
+          </p>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="444716fe-eed2-4571-9d25-449d64c9ba8e"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Contact Form Submission from Web3Forms"
+          />
+          <input type="hidden" name="from_name" value="My Website" />
+          <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+          <div class="form-group-container">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Your name"
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="Your email"
+                type="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="+91 123456789"
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                placeholder="Drop Your Message"
+              ></textarea>
+            </div>
+          </div>
+          <button class="form-submit" type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="containerfoot">
+          <div class="footer-sections">
+            <!-- Quick Links Section -->
+            <div class="quick-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#faq">Contact Us</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="contact-info">
+              <h3>Contact Us</h3>
+              <p><strong>Location:</strong> KL University Vijayawada</p>
+              <p><strong>Phone:</strong> +91 6304749943</p>
+              <p><strong>Email:</strong> sambhavsurthi14@gmail.com</p>
+
+              <!-- Social Media Links -->
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/sambhavsurthi14/"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+                <a
+                  href="https://www.facebook.com/sambhav.surthi"
+                  target="_blank"
+                  >Facebook</a
+                >
+                <a
+                  href="https://www.instagram.com/sambhavv.___/"
+                  target="_blank"
+                  >Instagram</a
+                >
+                <a href="https://x.com/SambhavSur43388" target="_blank">X</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright Section -->
+          <div class="copyright">
+            <p>&copy; 2024 EduLink. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static 'Accounts/login.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'Accounts/images/EduLink-Fevicon.png' %}"
+      sizes="96x96"
+      type="image/png"
+    />
+
+    <title>EduLink-Login</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navsection">
+      <nav class="navbar">
+        <ul class="navitems">
+          <div class="logo">
+            <a href="{% url 'home' %}" class="homelink"
+              ><img
+                src="{% static 'Accounts/images/BlueBlackLogoRMBACKGROUND.png' %}"
+                alt="EduLink-Logo"
+            /></a>
+          </div>
+          <div class="navlinks">
+            <li><a href="{% url 'home' %}" class="homelink">Home</a></li>
+            <li><a href="{% url 'home' %}">About Us</a></li>
+            <li><a href="{% url 'home' %}">Contact Us</a></li>
+            <li><a href="{% url 'signup' %}" class="signuplink">Sign-Up</a></li>
+            <li><a href="{% url 'login' %}" class="loginlink">Login</a></li>
+          </div>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Login form -->
+    <div class="login-container">
+      <img
+        src="{% static 'Accounts/images/BlueBlackLogoRMBACKGROUND.png' %}"
+        alt="EduLink-Logo"
+      />
+      <h2>Login</h2>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %} {{ form.non_field_errors }}
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account?
+        <a href="{% url 'signup' %}" class="signup-link"> Sign Up</a>
+      </p>
+      <a href="{% url 'forgotpassword' %}" class="forgot-password"
+        >Forgot Password?</a
+      >
+    </div>
+  </body>
+</html>
