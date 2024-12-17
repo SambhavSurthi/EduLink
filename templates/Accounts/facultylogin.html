@@ -46,8 +46,8 @@
         src="{% static 'Accounts/images/BlueBlackLogoRMBACKGROUND.png' %}"
         alt="EduLink-Logo"
       />
-      <h2>Student Login</h2>
-      <form action="{% url 'login' %}" method="POST">
+      <h2>Faculty Login</h2>
+      <form action="{% url 'facultylogin' %}" method="POST">
         {% csrf_token %} {{ form.non_field_errors }}
         <input type="text" name="username" placeholder="Username" required />
         <input
@@ -65,8 +65,8 @@
       <a href="{% url 'forgotpassword' %}" class="forgot-password"
         >Forgot Password?</a
       >
-      <a href="{% url 'facultylogin' %}" class="forgot-password"
-        >Faculty Login</a
+      <a href="{% url 'login' %}" class="forgot-password"
+        >Student Login</a
       >
     </div>
   </body>

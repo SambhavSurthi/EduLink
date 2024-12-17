@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'teacher/tnavbar.css' %}">
+    <link rel="icon" href="{% static 'teacher/images/EduLink-Fevicon.png' %}" sizes="96x96" type="image/png">
+  <title>{% block title %}EduLink-Faculty{% endblock %}</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+
+      <nav class="navbar">
+        <div class="row1">
+          <h2>Faculty Portal</h2>
+        </div>
+        <div class="row2">
+          <div class="logo">
+            <img src="{% static 'student/images/BlueBlackLogoRMBACKGROUND.png' %}" alt="Logo">
+          </div>
+          <div class="navlinks">
+            <div class="navprofile">
+              <img src="{% static 'student/images/blank-profile-picture-973460_1280.webp' %}" alt="Your profile">
+              <p>2526</p>
+            </div>
+            <a href="{% url 'homepage' %}">Logout</a>
+          </div>
+        </div>
+
+      </nav>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+
+      <ul>
+          <li><a href="{% url 'facultydashboard' %}">Dashboard</a></li>
+      </ul>
+  </div>
+
+  <div class="collapse">
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+  </div>
+
+
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+  </script>
+
+    {% block extra_content %}
+    <!-- Additional content can be added by child templates -->
+    {% endblock %}
+
+  </div>
+
+<script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>66fb88acb561b00b97c61301,66f1b665e31a322abc721ced</script>
+</body>
+
+</html>

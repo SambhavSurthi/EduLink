@@ -22,6 +22,9 @@ from accounts import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('login/', views.login, name='login'),
+    path('facultylogin/', views.facultylogin, name='facultylogin'),
     path('signup/', views.signup, name='signup'),
+    path('facultysignup/',views.facultysignup, name='facultysignup'),
     path('forgotpassword/', views.forgotpassword, name='forgotpassword'),
+
 ]

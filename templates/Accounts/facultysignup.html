@@ -52,12 +52,14 @@
         src="{% static 'Accounts/images/BlueBlackLogoRMBACKGROUND.png' %}"
         alt="EduLink-Logo"
       />
-      <h2>Student Sign Up</h2>
-      <form action="{% url 'signup' %}" method="POST">
+      <h2>Faculty Sign Up</h2>
+      <form action="{% url 'facultysignup' %}" method="POST">
         {% csrf_token %} {{ form.non_field_errors }}
+          <input type="text" name="institutionname" placeholder="Institution Name" required />
+          <input type="number" name="institutionid" placeholder="Institution Id" required />
         <input type="text" name="username" placeholder="Username" required />
         <input type="email" name="email" placeholder="Email" required />
-        <input type="tel" name="phonenumber" placeholder="Phone Number" required />
+          <input type="tel" name="phonenumber" placeholder="Phone Number" required />
         <input
           type="password"
           name="password1"
@@ -70,32 +72,13 @@
           placeholder="Confirm Password"
           required
         />
-
-        <select id="institution_id" name="institution_id"  style="
-            width: 95%;
-            padding: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #333;
-          " required>
-            <option value="">-- Select Institution --
-              <option value="">1235</option>
-<!--            {% for institution in institutions %}-->
-<!--                <option value="{{ institution.id }}">{{ institution.name }} (ID: {{ institution.id }})</option>-->
-<!--            {% endfor %}-->
-        </select><br><br>
-
         <button type="submit">Sign Up</button>
       </form>
       <p>
         Already have an account?
         <a href="{% url 'login' %}" class="login-link">Login</a>
       </p>
-      <p><a href="{% url 'facultysignup' %}" class="login-link">Faculty Sign Up</a></p>
-
+        <p><a href="{% url 'signup' %}" class="login-link">Student Sign Up</a></p>
     </div>
   </body>
 </html>
